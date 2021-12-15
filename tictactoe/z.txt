@@ -1,0 +1,32 @@
+
+
+
+
+cd C:\Users\Max\src\cs50-python-ai\tictactoe
+
+dos2unix runner0.py
+dos2unix test0.py
+dos2unix tic_tac_toe.py
+dos2unix myttt.py
+
+
+python3 runner0.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

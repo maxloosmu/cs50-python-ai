@@ -1,0 +1,29 @@
+
+
+
+
+cd C:\Users\Max\src\cs50-python-ai\degrees
+
+dos2unix degrees0.py
+dos2unix test0.py
+
+python3 test0.py small
+python3 degrees0.py small
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

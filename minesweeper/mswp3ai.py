@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-This python program solves the minesweeper problem without user intervention.
+This program has an AI that makes moves for each turn when ok by user.
+User can also choose for AI to move to end.
 """
 import itertools
 import random
@@ -321,12 +322,28 @@ if __name__ == "__main__":
     revealed = set()
     flags = set()
     lost = False
+    all_ai = False
     game.print_mines()
     print()
     while not lost:
         game.print_board()
         move = None
-        if not lost:
+        try_ai = False
+        if not all_ai:
+            inp_ai = input("Do you want AI to move?  Type a for AI to move to the end. (y/n/a): ")
+            if inp_ai.lower() == 'y':
+                print("AI will move.")
+                try_ai = True
+            elif inp_ai.lower() == 'n':
+                print("AI will not move.")
+                try_ai = False
+            elif inp_ai.lower() == 'a':
+                print("AI will move to the end.")
+                all_ai = True
+            else:
+                print("Wrong entry.  AI will not move.")
+                try_ai = False
+        if (try_ai or all_ai) and not lost:
             move = ai.make_safe_move()
             if move is None:
                 move = ai.make_random_move()
@@ -341,6 +358,20 @@ if __name__ == "__main__":
                     print("No known safe moves, AI making random move.")
             else:
                 print("AI making safe move.")
+        elif not try_ai and not lost:
+            inp = input("Enter row number followed by space and column number = ").split()
+                    # Standard input
+            if len(inp) == 2:
+                # Try block to handle errant input
+                try:
+                    (i, j) = tuple(map(int, inp))
+                    move = (i-1, j-1)
+                except ValueError:
+                    print("Wrong input!")
+                    continue
+            else:
+                print("Wrong input!")
+                continue
         if move:
             if game.is_mine(move):
                 lost = True
@@ -349,8 +380,8 @@ if __name__ == "__main__":
                 nearby = game.nearby_mines(move)
                 revealed.add(move)
                 ai.add_knowledge(move, nearby)
-                print(f"{move[0]+1}, {move[1]+1}")
-                print(nearby)
+                # print(f"{move[0]+1}, {move[1]+1}")
+                # print(nearby)
                 print(revealed)
                 (i, j) = move
                 game.mine_values[i][j]=nearby

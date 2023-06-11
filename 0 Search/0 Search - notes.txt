@@ -1,0 +1,32 @@
+LIFO => Stack => Depth First Search (DFS)
+FIFO => Queue => Breadth First Search (BFS)
+-------------------------------------------
+-------------------------------------------
+Under what circumstances should Depth First Search be used as compared to Breadth First Search?  
+
+ChatGPT
+
+Depth First Search (DFS) and Breadth First Search (BFS) are two popular graph traversal algorithms with different characteristics. The choice between DFS and BFS depends on the specific problem and requirements at hand. Here are some circumstances where DFS may be preferred over BFS:
+
+    Memory Efficiency: DFS typically requires less memory compared to BFS. This is because DFS explores a path to its deepest level before backtracking, whereas BFS explores all neighboring nodes at each level. If memory usage is a concern, DFS can be a better choice.
+
+    Finding a Solution: If the goal is to find any solution or path from the starting node to the target node, DFS can be more efficient. DFS quickly explores deep into a branch, potentially finding a solution faster if it exists closer to the starting node.
+
+    Graphs with Deep Branches: DFS is particularly effective in graphs that have deep branches or paths that extend far from the starting node. It explores one branch as deeply as possible before backtracking, potentially uncovering valuable information in such scenarios.
+
+    Topological Sorting: DFS is commonly used to perform topological sorting on directed acyclic graphs (DAGs). Topological sorting arranges the nodes in a graph in a linear order such that for every directed edge (u, v), node u comes before node v. DFS can efficiently generate a topological ordering by exploring the graph in a depth-first manner.
+
+On the other hand, BFS may be preferred in the following circumstances:
+
+    Shortest Path or Minimum Cost: If the goal is to find the shortest path or the minimum cost between two nodes, BFS is generally the better choice. BFS guarantees that the first path found between two nodes is the shortest one, as it explores nodes level by level.
+
+    Graphs with Broad Branching: BFS is more suitable for graphs that have broad branching or when the branching factor is high. It explores all neighboring nodes at the current level before moving to the next level, ensuring a systematic coverage of the graph.
+
+    Finding the Smallest Solution: If the problem requires finding the smallest solution or the solution with the fewest steps, BFS is often the preferred option. Since BFS explores the graph level by level, it will find the solution with the minimum number of steps.
+
+In summary, DFS is advantageous when memory efficiency is a concern, for finding any solution or exploring deep branches, and for performing topological sorting. BFS is preferred when finding the shortest path or minimum cost, dealing with graphs with broad branching, and finding the smallest solution. The choice ultimately depends on the problem's requirements and the characteristics of the graph or data structure being explored.
+-------------------------------------------
+-------------------------------------------
+
+
+

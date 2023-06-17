@@ -1,5 +1,16 @@
 LIFO => Stack => Depth First Search (DFS)
 FIFO => Queue => Breadth First Search (BFS)
+Uninformed search
+Informed search
+Greedy best first search
+Manhattan distance
+A* Search
+Minimax algorithm
+Alpha-beta pruning
+Depth-limited minimax
+Evaluation function to estimate the expected utility of the game from a given state
+
+
 -------------------------------------------
 -------------------------------------------
 Under what circumstances should Depth First Search be used as compared to Breadth First Search?  
